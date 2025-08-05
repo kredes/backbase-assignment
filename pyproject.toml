@@ -1,0 +1,51 @@
+[project]
+name = "backbase_assignment"
+requires-python = ">=3.13"
+description = "BackBase Senior Python Software Engineer assignment"
+
+dependencies = [
+    "fastapi[standard]>=0.116.1",
+    "gunicorn>=23.0.0",
+    "langchain>=0.3.27",
+    "langchain-google-genai>=2.1.8",
+    "langgraph>=0.6.3",
+    "pydantic == 2.11.7",
+    "pydantic-settings>=2.10.1",
+    "python-dotenv>=1.1.1",
+]
+
+[dependency-groups]
+dev = [
+    {include-group = "lint"},
+    {include-group = "test"}
+]
+
+test = [
+    "pytest == 8.4.1",
+    "pytest-cov == 6.2.1",
+]
+
+lint = [
+    "mypy == 1.17.1",
+    "ruff == 0.12.7",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report html --cov-report term -vvvv"
+pythonpath = ["assignment"]
+testpaths = ["tests"]
+
+
+[tool.mypy]
+exclude = ["build"]
+
+
+[tool.ruff]
+include = ["assignment/*", "tests/*"]
+exclude = ["__pycache__"]
+line-length = 100
+
+[tool.uv.workspace]
+members = [
+    "backbase-assignment",
+]
