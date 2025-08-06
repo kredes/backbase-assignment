@@ -4,7 +4,6 @@ from typing import TypedDict
 from langchain_core.runnables.configurable import StrEnum
 from langgraph.constants import END
 from langgraph.graph import StateGraph
-from langgraph.prebuilt.chat_agent_executor import AgentState
 
 from agent.model import get_model
 from agent.prompts import (
@@ -22,7 +21,7 @@ class InputState(TypedDict):
     question: str
 
 
-class State(InputState, AgentState):
+class State(InputState):
     """
     The state used to pass information between nodes.
     """
