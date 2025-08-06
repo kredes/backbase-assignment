@@ -2,6 +2,7 @@
 name = "backbase_assignment"
 requires-python = ">=3.13"
 description = "BackBase Senior Python Software Engineer assignment"
+version = "0.0.1"
 
 dependencies = [
     "fastapi[standard]>=0.116.1",
