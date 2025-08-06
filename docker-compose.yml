@@ -1,0 +1,9 @@
+name: backbase-assignment
+
+services:
+  backbase-assignment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
